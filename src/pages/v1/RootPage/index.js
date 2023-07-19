@@ -1,7 +1,7 @@
 const RootPage = () => {
     return (
         <div className="rootListPage">
-            <span>Hello, World!</span>
+            <span>레크리에이션 홈</span>
         </div>
     )
 }

@@ -9,14 +9,20 @@ import {
 import { Layout } from "components/molecule";
 
 import {
-    RootPage
+    RootPage,
+    MusicPage,
+    PersonPage,
+    ScenePage,
 } from 'pages/v1';
 
 import 'styles/index.scss';
 
 export const routes = {
     v1: [
-        { path: '/', element: <RootPage />}
+        { path: '/', element: <RootPage />},
+        { path: '/music', element: <MusicPage />},
+        { path: '/person', element: <PersonPage />},
+        { path: '/scene', element: <ScenePage />}
     ]
 };
 

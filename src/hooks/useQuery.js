@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import querystring from "querystring";
+import querystring from "query-string";
 
 export const useQuery = () => {
     const navigate = useNavigate();
