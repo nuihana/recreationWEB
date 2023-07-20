@@ -1,3 +1,15 @@
-body {
-	margin: 0;
+html {
+	font-family: 'Noto Sans KR';
+}
+
+button {
+	padding: 0;
+	cursor: pointer;
+	background-color: transparent;
+	border: 0;
+	user-select: none;
+
+	&:disabled {
+		cursor: not-allowed;
+	}
 }

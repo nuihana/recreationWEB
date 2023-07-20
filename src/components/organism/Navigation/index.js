@@ -3,8 +3,14 @@ import cx from 'classnames';
 
 import { useQuery } from "hooks";
 import {
+    Home,
+    HomeActive,
     Music,
-    MusicActive
+    MusicActive,
+    Person,
+    PersonActive,
+    Scene,
+    SceneActive
 } from "static/svgs";
 
 export const Navigation = () => {
@@ -16,8 +22,8 @@ export const Navigation = () => {
             <ul>
                 <li>
                     <NavLink to="/v1/" className={({ isActive }) => 'active'}>
-                        <MusicActive className="activeIcon" />
-                        <Music className="defaultIcon" />
+                        <HomeActive className="activeIcon" />
+                        <Home className="defaultIcon" />
                         <span>홈</span>
                     </NavLink>
                 </li>
@@ -30,15 +36,15 @@ export const Navigation = () => {
                 </li>
                 <li>
                     <NavLink to="/v1/person" className={({ isActive }) => 'active'}>
-                        <MusicActive className="activeIcon" />
-                        <Music className="defaultIcon" />
+                        <PersonActive className="activeIcon" />
+                        <Person className="defaultIcon" />
                         <span>인물</span>
                     </NavLink>
                 </li>
                 <li>
                     <NavLink to="/v1/scene" className={({ isActive }) => 'active'}>
-                        <MusicActive className="activeIcon" />
-                        <Music className="defaultIcon" />
+                        <SceneActive className="activeIcon" />
+                        <Scene className="defaultIcon" />
                         <span>장면</span>
                     </NavLink>
                 </li>

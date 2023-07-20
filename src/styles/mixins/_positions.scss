@@ -34,6 +34,10 @@
   }
 }
 
+@mixin absolute($args: ()) {
+  @include position(absolute, $args);
+}
+
 @mixin fixed($args: ()) {
   @include position(fixed, $args);
 }
