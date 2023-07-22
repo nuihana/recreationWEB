@@ -1,12 +1,25 @@
 import { useState } from "react";
-import { DropDown } from "components/atom";
+import { Button } from "react-bootstrap";
 
-const MusicPage = () => {
+import { DropDown } from "components/atom";
+import axios from "axios";
+
+const MusicPageHome = () => {
     const [genre, setGenre] = useState('');
     const genreList = ['락', '발라드'];
 
     const [releaseYear, setReleaseYear] = useState('');
     const releaseYearList = ['1960', '1970', '1980', '1990', '2000', '2010', '2020'];
+
+    const startMusicQuiz = () => {
+        // axios.get('http://192.168.0.200:8080/v1/music/ping').then(r => console.log(r));
+        axios.post('http://192.168.0.200:8080/v1/music/get', {
+            release_year: '',
+            genre_code: ''
+        }).then(result => {
+            console.log(result);
+        })
+    }
 
     return (
         <div className="musicPage">
@@ -18,13 +31,9 @@ const MusicPage = () => {
                     <dt>장르 제한</dt>
                     <dd>
                         <DropDown
-                            className='genre'
                             current={genre}
                             setCurrent={setGenre}
                             items={genreList}
-                            iterationKey='my-music-genre'
-                            placeholder='선택해주세요'
-                            withFullSize
                         />
                     </dd>
                 </div>
@@ -32,22 +41,18 @@ const MusicPage = () => {
                     <dt>발매일 제한</dt>
                     <dd>
                         <DropDown
-                            className='year'
                             current={releaseYear}
                             setCurrent={setReleaseYear}
                             items={releaseYearList}
-                            iterationKey='my-music-year'
-                            placeholder='선택해주세요'
-                            withFullSize
                         />
                     </dd>
                 </div>
             </div>
-            <div className="button">
-                <button className="btnItem">시작</button>
+            <div className="buttonRow">
+                <Button variant='primary' onClick={startMusicQuiz}>시작</Button>
             </div>
         </div>
     )
 }
 
-export default MusicPage
+export default MusicPageHome

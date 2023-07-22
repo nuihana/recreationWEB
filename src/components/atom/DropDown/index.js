@@ -1,63 +1,29 @@
-import { useRef, useState } from "react";
-import { useClickAway } from "react-use";
-
-import { ChevronDown } from "static/svgs";
+import { Dropdown } from "react-bootstrap";
 
 export const DropDown = (props) => {
     const {
-        className,
         current,
         setCurrent,
         items,
-        iterationKey,
-        withRightPadding,
-        withFullSize,
-        placeholder,
     } = props;
-
-    const dropDownRef = useRef(null);
-
-    const [dropDownOpen, setDropDownOpen] = useState(false);
-
-    const shouldHighLight = (!placeholder && current !== items[0]);
-
-    const handleDropDownOpen = () => {
-        setDropDownOpen((prev) => !prev);
-    }
 
     const handleDropDownClick = (e) => {
         setCurrent(e.currentTarget.title);
-        setDropDownOpen(false);
     }
 
-    useClickAway(dropDownRef, () => {
-        setDropDownOpen(false);
-    }, ['click']);
-
-    let newClassName = `dropDown ${className}`
-    if (dropDownOpen) newClassName += ' open';
-    if (withRightPadding) newClassName += ' rightPadding';
-    if (withFullSize) newClassName += ' full';
-
     return (
-        <div className={newClassName}>
-            <div
-                className={`current ${shouldHighLight ? 'highLight' : ''}`}
-                onClick={handleDropDownOpen}
-                ref={dropDownRef}
-            >
-                <span>{current || placeholder}</span>
-                <ChevronDown className='chevronDonw' />
-            </div>
-            <ul>
+        <Dropdown>
+            <Dropdown.Toggle variant="success">
+                {current || '선택'}
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu>
                 {
-                    items.map((label) => (
-                        <li key={`${iterationKey}-${label}`} className={label === current ? 'current' : ''}>
-                            <button title={label} onClick={handleDropDownClick}>{label}</button>
-                        </li>
+                    items.map((item, index) => (
+                        <Dropdown.Item key={index} title={item} onClick={handleDropDownClick}>{item}</Dropdown.Item>
                     ))
                 }
-            </ul>
-        </div>
+            </Dropdown.Menu>
+        </Dropdown>
     )
 }

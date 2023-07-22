@@ -10,17 +10,18 @@ import { Layout } from "components/molecule";
 
 import {
     RootPage,
-    MusicPage,
+    MusicPageHome,
     PersonPage,
     ScenePage,
 } from 'pages/v1';
 
 import 'styles/index.scss';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const routes = {
     v1: [
         { path: '/', element: <RootPage />},
-        { path: '/music', element: <MusicPage />},
+        { path: '/music', element: <MusicPageHome />},
         { path: '/person', element: <PersonPage />},
         { path: '/scene', element: <ScenePage />}
     ]
