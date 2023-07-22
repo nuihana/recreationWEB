@@ -1,0 +1,11 @@
+.musicPageDetail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .buttonRow {
+    position: absolute;
+    bottom: 100px;
+  }
+}

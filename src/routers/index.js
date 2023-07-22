@@ -11,6 +11,7 @@ import { Layout } from "components/molecule";
 import {
     RootPage,
     MusicPageHome,
+    MusicPageDetail,
     PersonPage,
     ScenePage,
 } from 'pages/v1';
@@ -22,6 +23,7 @@ export const routes = {
     v1: [
         { path: '/', element: <RootPage />},
         { path: '/music', element: <MusicPageHome />},
+        { path: '/music/detail', element: <MusicPageDetail />},
         { path: '/person', element: <PersonPage />},
         { path: '/scene', element: <ScenePage />}
     ]

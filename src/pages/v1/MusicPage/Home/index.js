@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { Button } from "react-bootstrap";
 
+import { useQuery } from "hooks";
 import { DropDown } from "components/atom";
-import axios from "axios";
 
 const MusicPageHome = () => {
+    const { navigate } = useQuery();
+
     const [genre, setGenre] = useState('');
     const genreList = ['락', '발라드'];
 
@@ -12,13 +14,7 @@ const MusicPageHome = () => {
     const releaseYearList = ['1960', '1970', '1980', '1990', '2000', '2010', '2020'];
 
     const startMusicQuiz = () => {
-        // axios.get('http://192.168.0.200:8080/v1/music/ping').then(r => console.log(r));
-        axios.post('http://192.168.0.200:8080/v1/music/get', {
-            release_year: '',
-            genre_code: ''
-        }).then(result => {
-            console.log(result);
-        })
+        navigate('/v1/music/detail');
     }
 
     return (

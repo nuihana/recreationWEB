@@ -4,9 +4,14 @@ import ReactDOM from 'react-dom/client';
 import Router from './routers';
 import reportWebVitals from './reportWebVitals';
 
+import { Provider } from "react-redux";
+import { store } from "./store";
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <Router />
+    <Provider store={store}>
+        <Router />
+    </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
