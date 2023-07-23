@@ -12,10 +12,12 @@
       align-items: center;
       justify-content: center;
     }
-  }
 
-  .buttonRow {
-    position: absolute;
-    bottom: 100px;
+    .buttonRow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 50px;
+    }
   }
 }

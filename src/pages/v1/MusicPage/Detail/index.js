@@ -8,6 +8,7 @@ import { action } from "store/music";
 const MusicPageDetail = () => {
     const dispatch = useDispatch();
     const [errorMessage, setErrorMessage] = useState("");
+    const [alreadyUsed, setAlreadyUsed] = useState([]);
     const music = useSelector(state => state.music.music);
 
     useEffect(() => {
@@ -15,11 +16,15 @@ const MusicPageDetail = () => {
     }, []);
 
     const nextMusicQuiz = () => {
-        // TODO: 이미 재생된 영상 데이터 호출시 제외하도록 기능 개선, 검색조건 추가
-        dispatch(action.getMusic())
+        const request = {
+            "usedList": alreadyUsed,
+        };
+
+        dispatch(action.getMusic(request))
             .unwrap()
             .then(response => {
                 // console.log("### response :", response);
+                setAlreadyUsed(prev => { return [...prev, response.seq] });
             })
             .catch(error => {
                 // console.log("### error :", error);
@@ -31,16 +36,20 @@ const MusicPageDetail = () => {
         <div className="musicPageDetail">
             {errorMessage && <div>{errorMessage}</div>}
             <div className="bodyRow">
-                {music &&
+                {music ?
                     <div>
                         <h5>{music.singer} - {music.title}</h5>
                         <div>
                             <YouTube videoId={music.url} />
                         </div>
+                        <div className="buttonRow">
+                            <Button variant='primary' onClick={nextMusicQuiz}>다음</Button>
+                        </div>
+                    </div>
+                    :
+                    <div>
+                        <h5>데이터 끝</h5>
                     </div>}
-            </div>
-            <div className="buttonRow">
-                <Button variant='primary' onClick={nextMusicQuiz}>다음</Button>
             </div>
         </div>
     )
