@@ -1,4 +1,4 @@
-import {createAsyncThunk, createReducer} from "@reduxjs/toolkit";
+import { createAsyncThunk, createReducer } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const action = {

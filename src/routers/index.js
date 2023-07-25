@@ -12,7 +12,8 @@ import {
     RootPage,
     MusicPageHome,
     MusicPageDetail,
-    PersonPage,
+    PersonPageHome,
+    PersonPageDetail,
     ScenePage,
 } from 'pages/v1';
 
@@ -24,7 +25,8 @@ export const routes = {
         { path: '/', element: <RootPage />},
         { path: '/music', element: <MusicPageHome />},
         { path: '/music/detail', element: <MusicPageDetail />},
-        { path: '/person', element: <PersonPage />},
+        { path: '/person', element: <PersonPageHome />},
+        { path: '/person/detail', element: <PersonPageDetail />},
         { path: '/scene', element: <ScenePage />}
     ]
 };
