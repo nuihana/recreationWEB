@@ -14,7 +14,8 @@ import {
     MusicPageDetail,
     PersonPageHome,
     PersonPageDetail,
-    ScenePage,
+    ProverbPageHome,
+    ProverbPageDetail,
 } from 'pages/v1';
 
 import 'styles/index.scss';
@@ -27,7 +28,8 @@ export const routes = {
         { path: '/music/detail', element: <MusicPageDetail />},
         { path: '/person', element: <PersonPageHome />},
         { path: '/person/detail', element: <PersonPageDetail />},
-        { path: '/scene', element: <ScenePage />}
+        { path: '/proverb', element: <ProverbPageHome />},
+        { path: '/proverb/detail', element: <ProverbPageDetail />}
     ]
 };
 

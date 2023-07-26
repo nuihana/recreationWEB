@@ -9,8 +9,8 @@ import {
     MusicActive,
     Person,
     PersonActive,
-    Scene,
-    SceneActive
+    Proverb,
+    ProverbActive
 } from "static/svgs";
 
 export const Navigation = () => {
@@ -42,10 +42,10 @@ export const Navigation = () => {
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/v1/scene" className={({ isActive }) => 'active'}>
-                        <SceneActive className="activeIcon" />
-                        <Scene className="defaultIcon" />
-                        <span>장면</span>
+                    <NavLink to="/v1/proverb" className={({ isActive }) => 'active'}>
+                        <ProverbActive className="activeIcon" />
+                        <Proverb className="defaultIcon" />
+                        <span>속담</span>
                     </NavLink>
                 </li>
             </ul>

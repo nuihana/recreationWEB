@@ -4,8 +4,8 @@ export { ReactComponent as MusicActive } from './icon-music-active.svg';
 export { ReactComponent as Music } from './icon-music.svg';
 export { ReactComponent as PersonActive } from './icon-person-active.svg';
 export { ReactComponent as Person } from './icon-person.svg';
-export { ReactComponent as SceneActive } from './icon-scene-active.svg';
-export { ReactComponent as Scene } from './icon-scene.svg';
+export { ReactComponent as ProverbActive } from './icon-proverb-active.svg';
+export { ReactComponent as Proverb } from './icon-proverb.svg';
 
 export { ReactComponent as ChevronUp } from './icon-chevron-up.svg';
 export { ReactComponent as ChevronRight } from './icon-chevron-right.svg';
