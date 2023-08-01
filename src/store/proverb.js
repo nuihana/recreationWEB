@@ -11,7 +11,7 @@ export const action = {
             }
         }).then(response => response.data)
             .catch(error => rejectWithValue(error.response.data));
-    })
+    }),
 }
 
 const initialState = {
