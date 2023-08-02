@@ -9,6 +9,7 @@ const ProverbPageDetail = () => {
     const [errorMessage, setErrorMessage] = useState("");
     const [alreadyUsed, setAlreadyUsed] = useState([]);
     const proverb = useSelector(state => state.proverb.proverb);
+    const condition = useSelector(state => state.proverbCondition.type);
 
     useEffect(() => {
         nextProverbQuiz();
@@ -16,6 +17,7 @@ const ProverbPageDetail = () => {
 
     const nextProverbQuiz = () => {
         const request = {
+            "type": condition.type,
             "usedList": alreadyUsed,
         };
 

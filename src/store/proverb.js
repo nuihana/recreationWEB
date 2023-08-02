@@ -1,4 +1,4 @@
-import { createAsyncThunk, createReducer } from "@reduxjs/toolkit";
+import {createAsyncThunk, createReducer, createSlice} from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const action = {
@@ -29,4 +29,21 @@ const proverbReducer = createReducer(initialState, builder => {
         .addCase(action.getProverb.fulfilled, reducer.getProverb)
 });
 
-export default proverbReducer;
+const proverbSlice = createSlice({
+    name: "proverb",
+    initialState: {
+        type: '',
+    },
+    reducers: {
+        setCondition: (state, action) => {
+            state.type = action.payload
+        },
+    },
+});
+
+export const { setCondition } = proverbSlice.actions;
+
+export {
+    proverbReducer,
+    proverbSlice,
+};
